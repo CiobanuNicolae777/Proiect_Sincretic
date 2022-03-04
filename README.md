@@ -1,0 +1,2 @@
+# ProiectSincretic
+ex 13
