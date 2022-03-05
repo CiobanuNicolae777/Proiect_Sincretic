@@ -50,18 +50,18 @@ void zecimal_in_hexazecimal(int h)
 
     while (h != 0)
     {
-        int temporar = 0;
+        int rest = 0;
 
-        temporar = h % 16;
+        rest = h % 16;
 
-        if(temporar < 10) 
+        if(rest < 10) 
         {
-            nr_hex[i] = temporar + 48;
+            nr_hex[i] = rest + 48;
             i++;
         }
         else 
         {
-            nr_hex[i] = temporar + 55;
+            nr_hex[i] = rest + 55;
             i++;
         }
 
@@ -80,17 +80,22 @@ int main()
     int n, o, h;
     cout << "Dati numarul zecimal:  ";
     cin >> n;
-    cout << "(n)10    =   (";
+    cout << "(" << n << ")10    =   (";
     zecimal_in_binar(n);
     cout << ")2";
 
 
     cout << "\n\nDati numarul zecimal:   ";
     cin >> o;
+    cout << "(" << o << ")10    =   (";
     zecimal_in_octal(o);
+    cout << ")8";
 
     cout << "\n\nDati numarul zecimal:   ";
     cin >> h;
+     cout << "(" << h << ")10    =   (";
     zecimal_in_hexazecimal(h);
+    cout << ")16";
+    cout << "\n ";
     return 0;
 }
