@@ -1,5 +1,4 @@
 #include <iostream>
-#include <math.h>
 
 using namespace std;
 
@@ -16,7 +15,6 @@ void zecimal_in_binar(int n)
         n = n / 2;
         i++;
     }
-
     for (int j = i - 1; j >=0; j--)
     cout << nr_binar[j];
 }
@@ -34,12 +32,9 @@ void zecimal_in_octal(int o)
         o = o / 8;
         i++;
     }
-
     for(int j = i - 1; j >= 0; j--)
     cout << nr_octal[j];
 }
-
-
 
 
 void zecimal_in_hexazecimal(int h)
@@ -67,34 +62,33 @@ void zecimal_in_hexazecimal(int h)
 
         h = h / 16;
     }
-
     for(int j = i - 1; j >= 0; j--)
     cout << nr_hex[j];
 }
 
 
 
-
 int main()
 {
     int n, o, h;
-    cout << "Dati numarul zecimal:  ";
+    cout << "Dati un numar:  ";
     cin >> n;
     cout << "(" << n << ")10    =   (";
     zecimal_in_binar(n);
     cout << ")2";
 
+   // cout << "\n\nDati un  numar:   ";
+    // cin >> n;
 
-    cout << "\n\nDati numarul zecimal:   ";
-    cin >> o;
-    cout << "(" << o << ")10    =   (";
-    zecimal_in_octal(o);
+    cout << "\n\n(" << n << ")10    =   (";
+    zecimal_in_octal(n);
     cout << ")8";
 
-    cout << "\n\nDati numarul zecimal:   ";
-    cin >> h;
-     cout << "(" << h << ")10    =   (";
-    zecimal_in_hexazecimal(h);
+    // cout << "\n\nDati un numar:   ";
+    //   cin >> n;
+
+    cout << "\n\n(" << n << ")10    =   (";
+    zecimal_in_hexazecimal(n);
     cout << ")16";
     cout << "\n ";
     return 0;
