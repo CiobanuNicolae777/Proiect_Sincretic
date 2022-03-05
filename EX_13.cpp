@@ -3,9 +3,10 @@
 
 using namespace std;
 
+
 void zecimal_in_binar(int n)
 {
-    int nr_binar[32];
+    int nr_binar[40];
 
     int i = 0;
 
@@ -23,7 +24,7 @@ void zecimal_in_binar(int n)
 
 void zecimal_in_octal(int o)
 {
-    int nr_octal[32];
+    int nr_octal[40];
 
     int i = 0;
 
@@ -38,35 +39,57 @@ void zecimal_in_octal(int o)
     cout << nr_octal[j];
 }
 
+
+
+
 void zecimal_in_hexazecimal(int h)
 {
-    int nr_hex[32];
+    char nr_hex[100];
 
     int i = 0;
 
-    while (h > 0)
+    while (h != 0)
     {
-        nr_hex[i] = h % 16;
+        int temporar = 0;
+
+        temporar = h % 16;
+
+        if(temporar < 10) 
+        {
+            nr_hex[i] = temporar + 48;
+            i++;
+        }
+        else 
+        {
+            nr_hex[i] = temporar + 55;
+            i++;
+        }
+
         h = h / 16;
-        i++;
     }
 
     for(int j = i - 1; j >= 0; j--)
     cout << nr_hex[j];
 }
 
+
+
+
 int main()
 {
     int n, o, h;
     cout << "Dati numarul zecimal:  ";
     cin >> n;
+    cout << "(n)10    =   (";
     zecimal_in_binar(n);
+    cout << ")2";
 
-    cout << "\nDati numarul zecimal:   ";
+
+    cout << "\n\nDati numarul zecimal:   ";
     cin >> o;
-    zecimal_in_binar(o);
+    zecimal_in_octal(o);
 
-    cout << "\nDati numarul zecimal:   ";
+    cout << "\n\nDati numarul zecimal:   ";
     cin >> h;
     zecimal_in_hexazecimal(h);
     return 0;
