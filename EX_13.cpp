@@ -5,7 +5,7 @@ using namespace std;
 
 void zecimal_in_binar(int n)   // conversie din Zecimal în Binar
 {
-    int nr_binar[40]; // vector pentru numărul binar
+    int nr_binar[100]; // vector pentru numărul binar
 
     int i = 0;  // contor pentru vector 
 
@@ -22,7 +22,7 @@ void zecimal_in_binar(int n)   // conversie din Zecimal în Binar
 
 void zecimal_in_octal(int o)  // conversie din Zecimal în Octal
 {
-    int nr_octal[40];  // vector pentru numărul Octal
+    int nr_octal[100];  // vector pentru numărul Octal
 
     int i = 0;  // contor pentru vector 
 
@@ -57,6 +57,7 @@ void zecimal_in_hexazecimal(int h)   // conversie din Zecimal în Hexazecimal
         else           // dacă restul este mai mare decât 10
         {
             nr_hex[i] = rest + 55;   //  10 + 55; ... 15 + 55;   =  65; ... 70; - reprezentând literele de la A la F din tabelul ASCII
+            i++;
         }
 
         h = h / 16;    // calculează câtul împărțirii
@@ -69,14 +70,14 @@ void zecimal_in_hexazecimal(int h)   // conversie din Zecimal în Hexazecimal
 
 int main()
 {
+
     int n, o, h;
     cout << "Dati un numar:  ";
     cin >> n;
     cout << "(" << n << ")10    =   (";
     zecimal_in_binar(n);  // apelează funcția pentru transformarea din Zecimal în Binar
-
     cout << ")2";
-
+    
     cout << "\n\n(" << n << ")10    =   (";
     zecimal_in_octal(n);  // apelează funcția pentru transformarea din Zecimal în Octal
     cout << ")8";
